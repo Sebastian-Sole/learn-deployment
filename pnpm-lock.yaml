@@ -20,6 +20,7 @@ specifiers:
   eslint: ^8.40.0
   eslint-config-next: ^13.4.2
   next: ^13.4.2
+  next-axiom: 1.0.0-rc.1
   postcss: ^8.4.27
   prettier: ^2.8.8
   prettier-plugin-tailwindcss: ^0.2.8
@@ -41,6 +42,7 @@ dependencies:
   '@trpc/react-query': 10.37.1_osxhw6t56wwgdftg5wod3rvjuy
   '@trpc/server': 10.37.1
   next: 13.4.16_biqbaboplfbrettd7655fr4n2y
+  next-axiom: 1.0.0-rc.1_next@13.4.16+react@18.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   superjson: 1.13.1
@@ -2290,6 +2292,18 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /next-axiom/1.0.0-rc.1_next@13.4.16+react@18.2.0:
+    resolution: {integrity: sha512-UPU0kHzTsVa+aqAb9TZOKCwHWVZHLv3TU3UYkPMXBnSlbcF4jmbPWorta5xeELtKJbw2ta2a8sVkwZfFfyW7Mw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      next: '>=13.4'
+      react: '>=18.0.0'
+    dependencies:
+      next: 13.4.16_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      whatwg-fetch: 3.6.17
+    dev: false
+
   /next/13.4.16_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-1xaA/5DrfpPu0eV31Iro7JfPeqO8uxQWb1zYNTe+KDKdzqkAGapLcDYHMLNKXKB7lHjZ7LfKUOf9dyuzcibrhA==}
     engines: {node: '>=16.8.0'}
@@ -3235,6 +3249,10 @@ packages:
       asn1js: 3.0.5
       pvtsutils: 1.3.3
       tslib: 2.4.1
+    dev: false
+
+  /whatwg-fetch/3.6.17:
+    resolution: {integrity: sha512-c4ghIvG6th0eudYwKZY5keb81wtFz9/WeAHAoy8+r18kcWlitUIrmGFQ2rWEl4UCKUilD3zCLHOIPheHx5ypRQ==}
     dev: false
 
   /which-boxed-primitive/1.0.2:
