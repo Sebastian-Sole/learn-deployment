@@ -1,8 +1,8 @@
 import { SignIn, SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
+import { Button } from "@mantine/core";
 import Head from "next/head";
 import Link from "next/link";
 import { api } from "~/utils/api";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const user = useUser();
@@ -10,6 +10,10 @@ export default function Home() {
   const { data, isLoading } = api.posts.getAll.useQuery();
 
   if (!data || isLoading) return <div>Loading...</div>;
+
+  const createPost = () => {
+    console.log("Hello");
+  };
 
   return (
     <>
@@ -20,14 +24,16 @@ export default function Home() {
       </Head>
       <main className="flex h-screen justify-center bg-slate-800  text-slate-50">
         <div className="h-full w-full border-x border-slate-400 md:max-w-2xl">
-          <div className="flex border-b border-slate-400 p-4">
+          <div className="flex justify-between border-b border-slate-400 p-4">
             {!user.isSignedIn && (
               <div className="flex justify-center">
                 <SignInButton />
               </div>
             )}
             {user.isSignedIn && <SignOutButton />}
-            <Button>Create</Button>
+            <Button variant="white" onClick={createPost}>
+              Create
+            </Button>
           </div>
           <div>
             {data?.map((post) => (
