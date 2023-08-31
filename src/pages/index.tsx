@@ -2,7 +2,7 @@ import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 import { Button } from "@mantine/core";
 import Link from "next/link";
 import { useState } from "react";
-import { RouterOutputs, api } from "~/utils/api";
+import { type RouterOutputs, api } from "~/utils/api";
 
 type PostWithUser = RouterOutputs["posts"]["getAll"][number];
 

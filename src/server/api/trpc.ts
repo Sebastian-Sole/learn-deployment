@@ -21,6 +21,7 @@ import { prisma } from "~/server/db";
  * These allow you to access things when processing a request, like the database, the session, etc.
  */
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type CreateContextOptions = Record<string, never>;
 
 /**
