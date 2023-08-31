@@ -1,6 +1,7 @@
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 import { Button } from "@mantine/core";
 import Head from "next/head";
+import Link from "next/link";
 import { useState } from "react";
 import { RouterOutputs, api } from "~/utils/api";
 
@@ -9,10 +10,14 @@ type PostWithUser = RouterOutputs["posts"]["getAll"][number];
 const PostView = (postData: PostWithUser) => {
   const { post, author } = postData;
   return (
-    <div className="border-b border-slate-400 p-8">
-      <div key={post.id}>{post.content}</div>
-      <div>Author: {author?.username}</div>
-    </div>
+    <Link href={`/post/${post.id}`}>
+      <div className="border-b border-slate-400 p-8">
+        <div key={post.id}>{post.content}</div>
+        <Link href={`/@${author.username}`}>
+          <div>Author: {author?.username}</div>
+        </Link>
+      </div>
+    </Link>
   );
 };
 
