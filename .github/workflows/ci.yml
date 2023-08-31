@@ -7,17 +7,25 @@ env:
 
 jobs:
   build:
+    name: 👷 - Build application
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
 
     steps:
       - uses: pnpm/action-setup@v2
         with:
-          version: 6.0.2
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
+          version: 7
+      - uses: actions/checkout@v3
+      - name: 🧰 - Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      - name: 📦 - Install dependencies
         run: pnpm install
 
       - name: Typecheck
